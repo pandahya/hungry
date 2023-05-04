@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --background: black;
+    --main: white;
+    --accent: cornflowerblue;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--background);
+    color: var(--main);
+    font-family: 'Inter Tight', sans-serif;
+}
+p{
+    color: var(--main);
+}
+a:link, a:visited{
+    color: var(--main);
+    text-decoration: none;
+}
+a:hover{
+    background-color: var(--accent);
+}
+#bread{
+    width: min-content;
+    margin: 50px auto;
+}
+.ham{
+    position: absolute;
+    margin: 10px auto;
+    width: 600px;
+}
+
+.smrecipe{
+    background-color: var(--main);
+    color: var(--background);
+    display: inline-block;
+    padding: 10px 10px 100px 10px;
+    outline: 2px solid var(--background);
+}
+.smrecipe p{
+    color: var(--background);
+}
+.recipe-go{
+    position: absolute;
+    padding: 2px 5px;
+    background-color: var(--accent);
+    border-radius: 5px;
+    bottom: 15px;
+}
+.recipe-go a:hover{
+    background-color: var(--main);
+    color: var(--background);
+}
+.recipe-go:hover{
+    background-color: var(--main);
+    outline: 1px solid var(--accent);
+}
+.recipe-go:hover::after{
+    content: " →";
+}
+.draggable{
+    position: absolute;
+    cursor: grab;
+}
+.draggable:active{
+    cursor: grabbing;
+}
+
+.spin{
+    animation: spinAnimate 1s linear infinite;
+}
+
+@keyframes spinAnimate{
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}
+
+::selection{
+    background-color: var(--background);
+    color: var(--background);
+}
