@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lucky color picker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    iframe{
+        position: absolute;
+        width: 606px;
+        height: 646px;
+        left: calc(50vw - 303px);
+    }
+    div{
+        position: absolute;
+        visibility: hidden;
+        top: 20px;
+        left: calc(50vw + 353px);
+    }
+</style>
+<body>
+    <iframe src="https://editor.p5js.org/pandahya/full/IjjaMFmcQ"></iframe>
+    <div>
+        <p>i am feeling...</p>
+        <p><a href="https://luckyfood.com/">... lucky</a></p>
+        <p><a href="ohyeah.html">... hungry of course</a></p>
+        <p><a href="whatishunger.html">... am i hungry?</a></p>
+    </div>
+</body>
+<script>
+    const textBox = document.querySelector("div");
+    setTimeout(showElement, 20000);
+    function showElement(){
+        textBox.style.visibility = "visible";
+    };
+</script>
+</html>

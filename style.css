@@ -18,6 +18,16 @@ body{
 p{
     color: var(--main);
 }
+figcaption{
+    text-align: center;
+}
+figure{
+    margin: auto auto;
+    width: 50%;
+}
+img{
+    width: 100%;
+}
 a:link, a:visited{
     color: var(--main);
     text-decoration: none;

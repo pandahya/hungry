@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    img:hover{
+        cursor: pointer;
+    }
+    p{
+        visibility: hidden;
+        position: fixed;
+        top: 35%;
+        left: 50%;
+    }
+    #fortuneText{
+        color: red;
+    }
+    #fortuneText:hover{
+        background-color: gold;
+    }
+</style>
+<body>
+    <figure>
+        <img src="assets/fortuneCookieClose.png" alt="a fortune cookie"/>
+        <figcaption>click me</figcaption>
+    </figure>
+    <p><a id="fortuneText" href="luckyColor.html">take me to my fortune &rarr;</a></p>
+</body>
+<script>
+    const cookie = document.querySelector("img");
+    const fortune = document.querySelector("p");
+    let clickNum = 0;
+    let maxClick = 20;
+    cookie.addEventListener("click",function(){
+        if(clickNum<=maxClick){
+            cookie.style.transform = `rotate(${Math.random()*(-20)}deg)`;
+            clickNum++;
+        }else if(clickNum>maxClick){
+            cookie.src = "assets/fortuneCookieOpen.png";
+            fortune.style.visibility = "visible";
+        }
+    })
+</script>
+</html>
