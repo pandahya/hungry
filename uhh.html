@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>uhh</title>
+</head>
+<style>
+    figure{
+        width: 20vw;
+        margin-top: 30vh;
+        opacity: 0;
+    }
+    button{
+        margin: 30px auto;
+        opacity: 10%;
+    }
+</style>
+<body>
+    <figure onmousemove="resetOpacity()">
+        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flogodownload.org%2Fwp-content%2Fuploads%2F2014%2F04%2FMcDonalds-logo-1.png&f=1&nofb=1&ipt=1014eab1f2efcc1e9e9a7c2375fea541bc5072d4b576bf2a038e9c972c71f2d0&ipo=images"/>
+    </figure>
+    <button onclick="backToSafety()">back to safety</button>
+</body>
+<script>
+    const logo = document.querySelector("figure");
+    const safetyBtn = document.querySelector("button");
+    let opacity = 0;
+    setInterval(changeOpacity, 2000);
+
+    function changeOpacity(){
+        if(opacity <100){
+            opacity +=2;
+            logo.style.opacity = `${opacity}%`;
+        }    
+        if(opacity >= 50){
+        logo.addEventListener("click", function(){
+            window.location.href = "holdOn.html";
+        })
+        if(opacity <90){
+            safetyBtn.style.opacity = `${opacity + 10}%`;
+        }
+    }
+    }
+    function resetOpacity(){
+        opacity = 2;
+        logo.style.opacity = "2%";
+    }
+    function backToSafety(){
+        window.location.href="imhungry.html";
+    }
+    
+</script>
+</html>

@@ -1,0 +1,101 @@
+!<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>open fridge 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    main{
+        width: 100vw;
+        height: 100vh;
+    }
+    img{
+        width: 200px;
+    }
+</style>
+<body>
+    <main>
+
+    </main>
+</body>
+<script>
+    const main = document.querySelector("main");
+    let items = 
+    [
+        "https://media0.giphy.com/media/10d8nH5PVDg9IA/200w.webp?cid=ecf05e470f0bcnqvr33m6y5090zrf7kkampn4t2de3j5pb9y&ep=v1_stickers_search&rid=200w.webp&ct=s",
+        "https://media0.giphy.com/media/10d8nH5PVDg9IA/200w.webp?cid=ecf05e470f0bcnqvr33m6y5090zrf7kkampn4t2de3j5pb9y&ep=v1_stickers_search&rid=200w.webp&ct=s",
+        "https://media0.giphy.com/media/10d8nH5PVDg9IA/200w.webp?cid=ecf05e470f0bcnqvr33m6y5090zrf7kkampn4t2de3j5pb9y&ep=v1_stickers_search&rid=200w.webp&ct=s",
+        "https://media0.giphy.com/media/10d8nH5PVDg9IA/200w.webp?cid=ecf05e470f0bcnqvr33m6y5090zrf7kkampn4t2de3j5pb9y&ep=v1_stickers_search&rid=200w.webp&ct=s",
+        "https://media0.giphy.com/media/10d8nH5PVDg9IA/200w.webp?cid=ecf05e470f0bcnqvr33m6y5090zrf7kkampn4t2de3j5pb9y&ep=v1_stickers_search&rid=200w.webp&ct=s",
+        "https://media0.giphy.com/media/10d8nH5PVDg9IA/200w.webp?cid=ecf05e470f0bcnqvr33m6y5090zrf7kkampn4t2de3j5pb9y&ep=v1_stickers_search&rid=200w.webp&ct=s",
+        "https://media0.giphy.com/media/10d8nH5PVDg9IA/200w.webp?cid=ecf05e470f0bcnqvr33m6y5090zrf7kkampn4t2de3j5pb9y&ep=v1_stickers_search&rid=200w.webp&ct=s",
+        "https://media0.giphy.com/media/10d8nH5PVDg9IA/200w.webp?cid=ecf05e470f0bcnqvr33m6y5090zrf7kkampn4t2de3j5pb9y&ep=v1_stickers_search&rid=200w.webp&ct=s",
+        "https://media0.giphy.com/media/10d8nH5PVDg9IA/200w.webp?cid=ecf05e470f0bcnqvr33m6y5090zrf7kkampn4t2de3j5pb9y&ep=v1_stickers_search&rid=200w.webp&ct=s",
+        "https://media0.giphy.com/media/10d8nH5PVDg9IA/200w.webp?cid=ecf05e470f0bcnqvr33m6y5090zrf7kkampn4t2de3j5pb9y&ep=v1_stickers_search&rid=200w.webp&ct=s",
+        "https://media0.giphy.com/media/10d8nH5PVDg9IA/200w.webp?cid=ecf05e470f0bcnqvr33m6y5090zrf7kkampn4t2de3j5pb9y&ep=v1_stickers_search&rid=200w.webp&ct=s",
+
+    ]
+    let width = main.offsetWidth - 200;
+    let height = main.offsetHeight - 200;
+    items.forEach(randomPos);
+    function randomPos(elmnt){
+        let randomX = Math.floor(Math.random() * width);
+        let randomY = Math.floor(Math.random() * height);
+        let item = document.createElement("img");
+        item.src = elmnt;
+        item.setAttribute("class", "draggable");
+        item.style.top = main.offsetTop + randomY + "px";
+        item.style.left = main.offsetLeft + randomX + "px";
+        main.appendChild(item);
+    }
+
+    let draggables = document.querySelectorAll(".draggable");
+    draggables.forEach(dragElement);
+    function dragElement(elmnt) {
+        var pos1 = 0,
+            pos2 = 0,
+            pos3 = 0,
+            pos4 = 0;
+        elmnt.onmousedown = dragMouseDown;
+
+        function dragMouseDown(e) {
+            e = e || window.event;
+            e.preventDefault();
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+            document.onmousemove = elementDrag;
+            box.appendChild(elmnt);
+        }
+
+        function elementDrag(e) {
+            e = e || window.event;
+            e.preventDefault();
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            elmnt.style.top = elmnt.offsetTop - pos2 + "px";
+            elmnt.style.left = elmnt.offsetLeft - pos1 + "px";
+        }
+
+        function closeDragElement() {
+            document.onmouseup = null;
+            document.onmousemove = null;
+        }
+        }
+
+        let sprite = document.querySelector("#walking");
+        let moreInfo = document.querySelector("#moreInfo");
+        sprite.addEventListener("click", function () {
+        if (moreInfo.style.visibility == "visible") {
+            moreInfo.style.visibility = "hidden";
+        } else {
+            moreInfo.style.visibility = "visible";
+        }
+    });
+</script>
+</html>

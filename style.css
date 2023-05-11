@@ -28,6 +28,17 @@ figure{
 img{
     width: 100%;
 }
+button{
+    display: block;
+    padding: 5px 8px;
+    background-color: var(--background);
+    color: var(--text);
+    border: 1px solid grey;
+    border-radius: 6px;
+}
+button:hover{
+    background-color: grey;
+}
 a:link, a:visited{
     color: var(--main);
     text-decoration: none;
@@ -83,6 +94,19 @@ a:hover{
 
 .spin{
     animation: spinAnimate 1s linear infinite;
+}
+.tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: var(--main);
+    color: var(--background);
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    z-index: 1;
+}
+.tooltip:hover .tooltiptext {
+    visibility: visible;
 }
 
 @keyframes spinAnimate{

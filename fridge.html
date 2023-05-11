@@ -8,18 +8,42 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <style>
-    h4{
-        text-align: center;
+    button{
+        margin: auto 10px 0 auto;
+    }
+    .tooltiptext {
+        background-color: rgba(0,0,0,0.5);
+        color: var(--main);
+        position: fixed;
+        margin: 30vh 20%;
     }
 </style>
 <body>
-    <figure>
+    <figure class="tooltip">
+        <span class="tooltiptext">click to open</span>
         <img id="fridge" src=""/>
     </figure>
+    <button onclick="reFridge()">get new fridge</button>
 </body>
 <script>
 const fridge = document.querySelector("#fridge");
 let num = Math.floor(Math.random()*9)+1;
 fridge.src = `assets/fridge${num}.png`;
+fridge.addEventListener("click", openFridge);
+
+function openFridge(){
+    window.location.href = `openFridge${num}.html`;
+}
+
+function reFridge(){
+    let newNum = Math.floor(Math.random()*9)+1;
+    if(newNum != num){
+        fridge.src = `assets/fridge${newNum}.png`;
+    }else if(num == newNum){
+        newNum = Math.floor(Math.random()*9)+1;
+        fridge.src = `assets/fridge${newNum}.png`;
+    }
+    num = newNum;
+}
 </script>
 </html>

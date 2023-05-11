@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>open fridge 5</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    main{
+        width: 100vw;
+        height: 100vh;
+    }
+    img{
+        width: 200px;
+    }
+</style>
+<body>
+    <main>
+
+    </main>
+</body>
+<script>
+    const main = document.querySelector("main");
+    let items = 
+    [
+        "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYmMwNDFjZmFjZmUxNWU1NDU5ZTY3ZGQwZTAxNGJhOTkzMjBjNzcxYSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PXM/c0JJtnPBQ3ECsRlJoH/giphy.gif",
+        "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzlkNmI4NGVhZmE5NTUwZDgwYjYwMzg3MDBhNTg0YjA0NGM2MDZhZSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PXM/dknZ5O3kmMk73GMdMI/giphy.gif",
+        "https://media4.giphy.com/media/llZVQV4cbIkRUhHQ2B/200w.webp?cid=ecf05e47hxiac6ksplr0g0e1nnvaugppvjdv0shjia9cblhq&ep=v1_stickers_search&rid=200w.webp&ct=s",
+        "https://media1.giphy.com/media/MXS32GHRMWTDGDT096/200w.webp?cid=ecf05e47hxiac6ksplr0g0e1nnvaugppvjdv0shjia9cblhq&ep=v1_stickers_search&rid=200w.webp&ct=s",
+        "https://media0.giphy.com/media/6rixgiJLQZOdo4Li8d/200w.webp?cid=ecf05e47hxiac6ksplr0g0e1nnvaugppvjdv0shjia9cblhq&ep=v1_stickers_search&rid=200w.webp&ct=s",
+        "https://media1.giphy.com/media/RpsQ6jYRn85HJun2Pb/200w.webp?cid=ecf05e47hqu3s06v5nzru84s5zpcww43wrvfvmjobl62v77s&ep=v1_stickers_search&rid=200w.webp&ct=s",
+        "https://media0.giphy.com/media/WvDAlrqPcd4Am8vfWI/200w.webp?cid=ecf05e47hqu3s06v5nzru84s5zpcww43wrvfvmjobl62v77s&ep=v1_stickers_search&rid=200w.webp&ct=s",
+        "https://media2.giphy.com/media/JQXaVktV6vxOh3ftsV/200w.webp?cid=ecf05e47v2vqfvhamp11qhfrnwkfr85aebr95dwfwvhrclp6&ep=v1_stickers_search&rid=200w.webp&ct=s",
+        "https://media0.giphy.com/media/1zJV664YZwvnWEkAkz/giphy.webp?cid=ecf05e47sfdmdejjaas0cppoyqwjpr6i3xsatb8oxo06qbnv&ep=v1_stickers_search&rid=giphy.webp&ct=s",
+        "https://media1.giphy.com/media/QU3pUaT4qzjbTPdd10/200w.webp?cid=ecf05e47sfdmdejjaas0cppoyqwjpr6i3xsatb8oxo06qbnv&ep=v1_stickers_search&rid=200w.webp&ct=s",
+        "https://media4.giphy.com/media/sRz7iHY3n3gfevRIkK/200w.webp?cid=ecf05e47hzucxmm9mygpsn323bkx241r1deheo88ul23m3nn&ep=v1_stickers_search&rid=200w.webp&ct=s",
+        "https://media1.giphy.com/media/KziRkiwQEXgfRYGX4t/200w.webp?cid=ecf05e472b5cobapdbm7rnx2d9hmb9oahgdyie8ieau9s81c&ep=v1_stickers_search&rid=200w.webp&ct=s",
+        "https://media1.giphy.com/media/KziRkiwQEXgfRYGX4t/200w.webp?cid=ecf05e472b5cobapdbm7rnx2d9hmb9oahgdyie8ieau9s81c&ep=v1_stickers_search&rid=200w.webp&ct=s",
+        "https://media4.giphy.com/media/BFXzWvY1rfNQPGzj06/giphy.webp?cid=ecf05e4737zvd4n73txcl1do4snm1ijdg50x3nz4g7xx7pq6&ep=v1_stickers_search&rid=giphy.webp&ct=s",
+        "https://media4.giphy.com/media/Js77OZvBnp7mG4uKeb/giphy.webp?cid=ecf05e47hg92natfwwteuzvfx5thaa7867mszt5ej1488zga&ep=v1_stickers_search&rid=giphy.webp&ct=s",
+        // "https://media2.giphy.com/media/LOJelhSAg0gujrQmT1/200w.webp?cid=ecf05e47krqfypu9i3q4cc9ql6y6xz9pzahjo0ify4w6dm56&ep=v1_stickers_search&rid=200w.webp&ct=s",
+        "https://media1.giphy.com/media/tG9K5aEnjVbBdyynrL/200w.webp?cid=ecf05e47694gk8fayg7evkvmv2em3lttyvxibjn7iw52dpyh&ep=v1_stickers_search&rid=200w.webp&ct=s",
+        "https://media1.giphy.com/media/WmunVhN5ZxieCCFFZv/giphy.webp?cid=ecf05e47694gk8fayg7evkvmv2em3lttyvxibjn7iw52dpyh&ep=v1_stickers_search&rid=giphy.webp&ct=s",
+
+    ]
+    let width = main.offsetWidth - 200;
+    let height = main.offsetHeight - 200;
+    items.forEach(randomPos);
+    function randomPos(elmnt){
+        let randomX = Math.floor(Math.random() * width);
+        let randomY = Math.floor(Math.random() * height);
+        let item = document.createElement("img");
+        item.src = elmnt;
+        item.setAttribute("class", "draggable");
+        item.style.top = main.offsetTop + randomY + "px";
+        item.style.left = main.offsetLeft + randomX + "px";
+        main.appendChild(item);
+    }
+
+    let draggables = document.querySelectorAll(".draggable");
+    draggables.forEach(dragElement);
+    function dragElement(elmnt) {
+        var pos1 = 0,
+            pos2 = 0,
+            pos3 = 0,
+            pos4 = 0;
+        elmnt.onmousedown = dragMouseDown;
+
+        function dragMouseDown(e) {
+            e = e || window.event;
+            e.preventDefault();
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+            document.onmousemove = elementDrag;
+            box.appendChild(elmnt);
+        }
+
+        function elementDrag(e) {
+            e = e || window.event;
+            e.preventDefault();
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            elmnt.style.top = elmnt.offsetTop - pos2 + "px";
+            elmnt.style.left = elmnt.offsetLeft - pos1 + "px";
+        }
+
+        function closeDragElement() {
+            document.onmouseup = null;
+            document.onmousemove = null;
+        }
+        }
+
+        let sprite = document.querySelector("#walking");
+        let moreInfo = document.querySelector("#moreInfo");
+        sprite.addEventListener("click", function () {
+        if (moreInfo.style.visibility == "visible") {
+            moreInfo.style.visibility = "hidden";
+        } else {
+            moreInfo.style.visibility = "visible";
+        }
+    });
+</script>
+</html>
